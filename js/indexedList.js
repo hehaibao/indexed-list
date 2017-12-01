@@ -66,16 +66,46 @@
                 });
 
                 //监听滚动，当到指定位置时，高亮右侧对应标签
-                $(window).on('scroll', () => {
+                function handleScroll() {
                     let currentTop = document.documentElement.scrollTop || document.body.scrollTop;
                     let currentIndex = _self.getArrIndex(topArr, currentTop);
                     $(_self.config.elNav).find('li').removeClass('active').eq(currentIndex).addClass('active');
-                });
+                }
+                let throttled = _self.throttle(handleScroll, 300);
+                $(window).on('scroll', throttled);
             } else {
                 //空数据
                 alert('抱歉，请传入您想要展示的数据哦~');
                 return;
             }
+        }
+        throttle(func, wait) {
+            //函数节流
+            let context = '';
+            let args = '';
+            let timeout = '';
+            let result = '';
+            let previous = 0;
+            const later = () => {
+              previous = new Date;
+              timeout = null;
+              result = func.apply(context, args);
+            };
+            return function() {
+              const now = new Date;
+              const remaining = wait - (now - previous);
+              context = this;
+              args = arguments;
+              if (remaining <= 0) {
+                clearTimeout(timeout);
+                timeout = null;
+                previous = now;
+                result = func.apply(context, args);
+              } else if (!timeout) {
+                timeout = setTimeout(later, remaining);
+              }
+              return result;
+            };
         }
         getTop(index = 0) {
             //根据索引返回当前元素的位置：top值
