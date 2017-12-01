@@ -66,8 +66,8 @@
                 });
 
                 //监听滚动，当到指定位置时，高亮右侧对应标签
-                $(window).on('scroll', (event) => {
-                    let currentTop = document.documentElement.scrollTop;
+                $(window).on('scroll', () => {
+                    let currentTop = document.documentElement.scrollTop || document.body.scrollTop;
                     let currentIndex = _self.getArrIndex(topArr, currentTop);
                     $(_self.config.elNav).find('li').removeClass('active').eq(currentIndex).addClass('active');
                 });
