@@ -2,12 +2,13 @@
 
 在线演示地址：https://hehaibao.github.io/indexed-list/
 
+手机上预览，请移步http://www.hehaibao.com/qr/ 生成二维码后扫描访问。
+
 ### 插件说明：
 
 1. ES6语法，支持jQuery和Zepto；
 2. 压缩后indexedList.min.js仅4kb,未压缩文件是7kb；
-3. 支持移动端单张预览；
-4. 支持gulp压缩js；
+3. 支持gulp压缩js；
 
 ### 如何使用？
 
