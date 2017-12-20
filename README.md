@@ -52,7 +52,7 @@
 <script src="js/indexedList.min.js"></script>
 ```
 
-5. 最后一步
+5. 最后一步 调用
 
 ```javascript
 <script>
@@ -94,6 +94,6 @@
 ```
 
 
---插件依赖：
+-- 插件依赖：
 
 * [jQuery](http://jquery.com/) or [Zepto](http://www.zeptojs.cn/)
