@@ -1,5 +1,9 @@
 ## jQuery/Zepto 手机联系人字母索引列表 插件
 
+效果预览：
+
+![image](https://github.com/hehaibao/indexed-list/blob/master/preview.gif)
+
 在线演示地址：https://hehaibao.github.io/indexed-list/
 
 手机上预览，请移步http://www.hehaibao.com/qr/ 生成二维码后扫描访问。
