@@ -1,8 +1,19 @@
 /**
  * @desc 索引列表插件
  * @author haibao[http://www.hehaibao.com/]
+ * github [https://github.com/hehaibao/indexed-list]
+ * MIT
  */
-;($ => {
+;(function(factory){
+    if(typeof define === 'function' && define.amd) { // AMD
+        // you may need to change `define([------>'zepto'<------], factory)` 
+        // if you use jquery, change it rely name, such as `define(['jquery'], factory)`
+        define(['zepto'], factory)
+        // define(['jquery'], factory)
+    } else { // Global
+        factory(window.Zepto || window.jQuery)
+    }
+})(function($,undefined){
     $.indexedList = options => new indexedList(options);
     class indexedList {
         constructor(options) {
@@ -184,5 +195,4 @@
         }, opts.delay);
         return _this;
     };
-
-})(window.Zepto || window.jQuery);
+});
